@@ -62,7 +62,7 @@ function Add() {
           }}
         />
         <input
-          class="add-form__input add-form__input-answer"
+          className="add-form__input add-form__input-answer"
           type="text"
           placeholder="• Fourth Answer"
           value={answerFour}
