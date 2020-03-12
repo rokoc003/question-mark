@@ -2,9 +2,9 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Add from "./components/pages/Add";
-import Vote from "./components/pages/Vote";
-import Result from "./components/pages/Result";
+import Add from "./pages/Add";
+import Vote from "./pages/Vote";
+import Result from "./pages/Result";
 
 function App() {
   return (
@@ -15,10 +15,10 @@ function App() {
           <Route exact path="/">
             <Add />
           </Route>
-          <Route path="/Vote">
+          <Route path="/vote">
             <Vote />
           </Route>
-          <Route path="/Result">
+          <Route path="/result">
             <Result />
           </Route>
         </Switch>
