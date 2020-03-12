@@ -26,7 +26,7 @@ function Add() {
     <Card>
       <form className="add-form" onSubmit={handleSubmit}>
         <input
-          class="add-form__input add-form__input-question"
+          className="add-form__input add-form__input-question"
           type="text"
           placeholder="Enter your question"
           value={question}
@@ -35,7 +35,7 @@ function Add() {
           }}
         />
         <input
-          class="add-form__input add-form__input-answer"
+          className="add-form__input add-form__input-answer"
           type="text"
           placeholder="• First Answer"
           value={answerOne}
@@ -44,7 +44,7 @@ function Add() {
           }}
         />
         <input
-          class="add-form__input add-form__input-answer"
+          className="add-form__input add-form__input-answer"
           type="text"
           placeholder="• Second Answer"
           value={answerTwo}
@@ -53,7 +53,7 @@ function Add() {
           }}
         />
         <input
-          class="add-form__input add-form__input-answer"
+          className="add-form__input add-form__input-answer"
           type="text"
           placeholder="• Third Answer"
           value={answerThree}
