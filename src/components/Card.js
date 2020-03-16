@@ -1,8 +1,14 @@
-import React from "react";
-import "./Card.css";
+import styled from "@emotion/styled";
 
-function Card(props) {
-  return <div className="card">{props.children}</div>;
-}
+const Card = styled.div`
+  background-color: #faece0;
+  width: 100%;
+  height: 70vh;
+  border-radius: 10px;
+  opacity: 0.6;
+  -webkit-box-shadow: 10px 10px 34px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 34px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 34px 2px rgba(0, 0, 0, 0.75);
+`;
 
 export default Card;
