@@ -2,12 +2,7 @@ import React from "react";
 import Card from "../components/Card";
 import Button from "../components/Button";
 import styled from "@emotion/styled";
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
+import Form from "../components/Form";
 
 const Input = styled.input`
   width: 100%;
@@ -51,7 +46,8 @@ function Add() {
       answerOne: answerOne,
       answerTwo: answerTwo,
       answerThree: answerThree,
-      answerFour: answerFour
+      answerFour: answerFour,
+      votes: []
     };
     const response = await fetch(
       process.env.REACT_APP_POLLS_API ||
