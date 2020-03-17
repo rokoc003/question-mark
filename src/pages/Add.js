@@ -1,7 +1,40 @@
 import React from "react";
 import Card from "../components/Card";
-import "./Add.css";
 import Button from "../components/Button";
+import styled from "@emotion/styled";
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  ::placeholder {
+    color: #e892a3;
+    padding-left: 5px;
+  }
+`;
+
+const QuestionInput = styled(Input)`
+  width: 80%;
+  padding-left: 5px;
+  border-radius: 5px;
+  margin: 30px 0px 30px 0px;
+  height: 45px;
+  font-size: 1.2rem;
+  outline: none;
+`;
+
+const AnswerInput = styled(Input)`
+  margin: 7px;
+  width: 80%;
+  border-radius: 5px;
+  outline: none;
+  height: 2rem;
+  font-size: 1.1rem;
+`;
 
 function Add() {
   const [question, setQuestion] = React.useState("");
@@ -35,9 +68,8 @@ function Add() {
 
   return (
     <Card>
-      <form className="add-form" onSubmit={handleSubmit}>
-        <input
-          className="add-form__input add-form__input-question"
+      <Form onSubmit={handleSubmit}>
+        <QuestionInput
           type="text"
           placeholder="Enter your question"
           value={question}
@@ -45,8 +77,7 @@ function Add() {
             setQuestion(event.target.value);
           }}
         />
-        <input
-          className="add-form__input add-form__input-answer"
+        <AnswerInput
           type="text"
           placeholder="• First Answer"
           value={answerOne}
@@ -54,8 +85,7 @@ function Add() {
             setAnswerOne(event.target.value);
           }}
         />
-        <input
-          className="add-form__input add-form__input-answer"
+        <AnswerInput
           type="text"
           placeholder="• Second Answer"
           value={answerTwo}
@@ -63,8 +93,7 @@ function Add() {
             setAnswerTwo(event.target.value);
           }}
         />
-        <input
-          className="add-form__input add-form__input-answer"
+        <AnswerInput
           type="text"
           placeholder="• Third Answer"
           value={answerThree}
@@ -72,8 +101,7 @@ function Add() {
             setAnswerThree(event.target.value);
           }}
         />
-        <input
-          className="add-form__input add-form__input-answer"
+        <AnswerInput
           type="text"
           placeholder="• Fourth Answer"
           value={answerFour}
@@ -82,7 +110,7 @@ function Add() {
           }}
         />
         <Button>Create Poll</Button>
-      </form>
+      </Form>
     </Card>
   );
 }

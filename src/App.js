@@ -1,16 +1,24 @@
 import React from "react";
-import "./App.css";
-import Header from "./components/Header";
+import AppHeader from "./components/AppHeader";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Add from "./pages/Add";
 import Vote from "./pages/Vote";
 import Result from "./pages/Result";
+import styled from "@emotion/styled";
+import GlobalStyles from "./GlobalStyles";
+
+const Main = styled.main`
+  padding: 60px 25px;
+  display: flex;
+  justify-content: center;
+`;
 
 function App() {
   return (
     <Router>
-      <Header />
-      <main className="main">
+      <GlobalStyles />
+      <AppHeader />
+      <Main>
         <Switch>
           <Route exact path="/">
             <Add />
@@ -22,7 +30,7 @@ function App() {
             <Result />
           </Route>
         </Switch>
-      </main>
+      </Main>
     </Router>
   );
 }
