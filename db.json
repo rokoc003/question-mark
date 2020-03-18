@@ -5,14 +5,16 @@
       "question": "How much is the fish?",
       "answerOne": "8$",
       "answerTwo": "5 Pounds",
-      "answerThree": "99 bucks"
+      "answerThree": "99 bucks",
+      "votes": []
     },
     {
       "id": 2,
       "question": "How much is the cat?",
       "answerOne": "15$",
       "answerTwo": "15 Pounds",
-      "answerThree": "199 bucks"
+      "answerThree": "199 bucks",
+      "votes": []
     }
   ]
 }
