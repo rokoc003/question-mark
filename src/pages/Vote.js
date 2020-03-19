@@ -15,10 +15,14 @@ function Vote() {
   const history = useHistory();
   const [poll, setPoll] = React.useState(null);
   const [answer, setAnswer] = React.useState(null);
+  const [isLoadingPatchPoll, setIsLoadingPatchPoll] = React.useState(false);
+  const [isLoadingGetPoll, setIsLoadingGetPoll] = React.useState(true);
 
   React.useEffect(() => {
     async function doGetPoll() {
+      setIsLoadingGetPoll(true);
       const poll = await getPoll(pollId);
+      setIsLoadingGetPoll(false);
       setPoll(poll);
     }
 
@@ -27,11 +31,16 @@ function Vote() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    setIsLoadingPatchPoll(true);
+
     const newPoll = { ...poll };
     newPoll.votes.push(answer);
 
     await patchPoll(pollId, newPoll);
     history.push(`/polls/${poll.id}`);
+  }
+  if (isLoadingGetPoll) {
+    return <div>Loading...</div>;
   }
 
   return (
@@ -78,7 +87,7 @@ function Vote() {
           />
           {poll?.answerFour}
         </Label>
-        <Button>Vote</Button>
+        <Button disabled={isLoadingPatchPoll}>Vote</Button>
       </Form>
     </Card>
   );
