@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import Form from "../components/Form";
 import Button from "../components/Button";
 import { patchPoll, getPoll } from "../api/polls";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const Label = styled.label`
   display: block;
@@ -40,7 +41,7 @@ function Vote() {
     history.push(`/polls/${poll.id}`);
   }
   if (isLoadingGetPoll) {
-    return <div>Loading...</div>;
+    return <LoadingSpinner>Loading...</LoadingSpinner>;
   }
 
   return (
