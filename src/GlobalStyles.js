@@ -4,7 +4,7 @@ import { Global, css } from "@emotion/core";
 export default function GlobalStyles() {
   return (
     <Global
-      styles={css`
+      styles={themes => css`
         *,
         *::before,
         *::after {
@@ -12,7 +12,7 @@ export default function GlobalStyles() {
         }
         body {
           margin: 0;
-          background-image: linear-gradient(to bottom right, #f8b271, #ffead6);
+          background-image: ${themes.colors.backgroundPrimary};
           height: 100vh;
           font-family: "Bellota Text", cursive;
         }
