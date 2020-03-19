@@ -10,12 +10,23 @@ const Header = styled.header`
   height: 80px;
   background-color: #ffcb9aab;
 `;
+const SwitchColorButton = styled.button`
+  border: none;
+  background: none;
+  font-size: 20px;
+  outline: none;
+`;
 
-function AppHeader() {
+function AppHeader({ onSwitchColorButtonClick }) {
   return (
     <Header>
       <Title>QuestionMark</Title>
       <Logo className="logo" src={Questionmark} alt="Question Mark Logo" />
+      <SwitchColorButton onClick={onSwitchColorButtonClick}>
+        <span role="img" aria-label="Switch theme">
+          🌗
+        </span>
+      </SwitchColorButton>
     </Header>
   );
 }
