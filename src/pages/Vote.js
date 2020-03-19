@@ -4,14 +4,11 @@ import { useParams, useHistory } from "react-router-dom";
 import styled from "@emotion/styled";
 import Form from "../components/Form";
 import Button from "../components/Button";
+import { patchPoll, getPoll } from "../api/polls";
 
 const Label = styled.label`
   display: block;
 `;
-
-const pollApiURL =
-  process.env.REACT_APP_POLLS_API ||
-  "https://my-json-server.typicode.com/rokoc003/question-mark/polls";
 
 function Vote() {
   const { pollId } = useParams();
@@ -20,13 +17,12 @@ function Vote() {
   const [answer, setAnswer] = React.useState(null);
 
   React.useEffect(() => {
-    async function getPoll() {
-      const response = await fetch(`${pollApiURL}/${pollId}`);
-      const poll = await response.json();
+    async function doGetPoll() {
+      const poll = await getPoll(pollId);
       setPoll(poll);
     }
 
-    getPoll();
+    doGetPoll();
   }, [pollId]);
 
   async function handleSubmit(event) {
@@ -34,13 +30,7 @@ function Vote() {
     const newPoll = { ...poll };
     newPoll.votes.push(answer);
 
-    await fetch(`${pollApiURL}/${pollId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(newPoll)
-    });
+    await patchPoll(pollId, newPoll);
     history.push(`/polls/${poll.id}`);
   }
 
