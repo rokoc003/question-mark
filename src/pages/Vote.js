@@ -52,7 +52,7 @@ function Vote() {
             type="radio"
             name="answer"
             value="answerOne"
-            chacked={answer === "answerOne"}
+            checked={answer === "answerOne"}
             onChange={event => setAnswer(event.target.value)}
           />
           {poll?.answerOne}
@@ -62,7 +62,7 @@ function Vote() {
             type="radio"
             name="answer"
             value="answerTwo"
-            chacked={answer === "answerTwo"}
+            checked={answer === "answerTwo"}
             onChange={event => setAnswer(event.target.value)}
           />
           {poll?.answerTwo}
@@ -72,7 +72,7 @@ function Vote() {
             type="radio"
             name="answer"
             value="answerThree"
-            chacked={answer === "answerThree"}
+            checked={answer === "answerThree"}
             onChange={event => setAnswer(event.target.value)}
           />
           {poll?.answerThree}
@@ -82,7 +82,7 @@ function Vote() {
             type="radio"
             name="answer"
             value="answerFour"
-            chacked={answer === "answerFour"}
+            checked={answer === "answerFour"}
             onChange={event => setAnswer(event.target.value)}
           />
           {poll?.answerFour}
