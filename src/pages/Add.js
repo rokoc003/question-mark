@@ -40,9 +40,12 @@ function Add() {
   const [answerTwo, setAnswerTwo] = React.useState("");
   const [answerThree, setAnswerThree] = React.useState("");
   const [answerFour, setAnswerFour] = React.useState("");
+  const [isLoading, setIsLoading] = React.useState(false);
 
   async function handleSubmit(event) {
     event.preventDefault();
+
+    setIsLoading(true);
 
     const poll = {
       question: question,
@@ -53,7 +56,7 @@ function Add() {
       votes: []
     };
 
-    const createdPoll = await postPoll.json(poll);
+    const createdPoll = await postPoll(poll);
     history.push(`/polls/${createdPoll.id}/vote`);
   }
 
@@ -100,7 +103,7 @@ function Add() {
             setAnswerFour(event.target.value);
           }}
         />
-        <Button>Create Poll</Button>
+        <Button disabled={isLoading}>Create Poll</Button>
       </Form>
     </Card>
   );
