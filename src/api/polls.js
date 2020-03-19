@@ -1,6 +1,6 @@
 const pollApiURL =
   process.env.REACT_APP_POLLS_API ||
-  "https://my-json-server.typicode.com/lmachens/vote-or-die/polls";
+  "https://my-json-server.typicode.com/rokoc003/question-mark/polls";
 
 export async function getPoll(pollId) {
   const response = await fetch(`${pollApiURL}/${pollId}`);
