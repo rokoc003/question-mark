@@ -41,11 +41,7 @@ function Vote() {
     history.push(`/polls/${poll.id}`);
   }
   if (isLoadingGetPoll) {
-    return (
-      <div>
-        <LoadingSpinner>Loading...</LoadingSpinner>
-      </div>
-    );
+    return <LoadingSpinner>Loading...</LoadingSpinner>;
   }
 
   return (
