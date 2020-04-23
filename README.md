@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Question-mark
+
+This project is a survey tool. You can create a new poll, vote, and view the poll results. I built this project with the JSON Server [https://github.com/typicode/json-server]. I also added a theme. Go to the link in the description and try it out!
 
 ## Available Scripts
 
